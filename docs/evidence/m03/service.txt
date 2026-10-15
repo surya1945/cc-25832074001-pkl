@@ -1,0 +1,21 @@
+● cc-m03.service - PTI 2802 M03 Flask Application
+     Loaded: loaded (/etc/systemd/system/cc-m03.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-10-15 16:24:48 WIB; 21min ago
+   Main PID: 4253 (gunicorn)
+      Tasks: 3 (limit: 532)
+     Memory: 30.9M (peak: 31.1M)
+        CPU: 369ms
+     CGroup: /system.slice/cc-m03.service
+             ├─4253 /srv/cc-m03/.venv/bin/python /srv/cc-m03/.venv/bin/gunicorn --workers 1 --threads 2 --bind 127.0.0.1:8000 --timeout 30 --access-logfile - --error-logfile - app:app
+             └─4258 /srv/cc-m03/.venv/bin/python /srv/cc-m03/.venv/bin/gunicorn --workers 1 --threads 2 --bind 127.0.0.1:8000 --timeout 30 --access-logfile - --error-logfile - app:app
+
+Oct 15 16:24:48 cc-m03-25832074001 gunicorn[4253]: [2026-10-15 16:24:48 +0700] [4253] [ERROR] Control server error: [Errno 13] Permission denied: '/home/suryanaa'
+Oct 15 16:30:42 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:30:42 +0700] "GET /health HTTP/1.1" 200 91 "-" "curl/8.5.0"
+Oct 15 16:30:42 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:30:42 +0700] "HEAD / HTTP/1.1" 200 0 "-" "curl/8.5.0"
+Oct 15 16:31:00 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:31:00 +0700] "GET /health HTTP/1.1" 200 91 "-" "curl/8.21.0"
+Oct 15 16:31:02 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:31:02 +0700] "HEAD / HTTP/1.1" 200 0 "-" "curl/8.21.0"
+Oct 15 16:31:23 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:31:23 +0700] "GET / HTTP/1.1" 200 1551 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+Oct 15 16:31:23 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:31:23 +0700] "GET /static/style.css HTTP/1.1" 200 0 "http://20.214.153.96/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+Oct 15 16:31:23 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:31:23 +0700] "GET /favicon.ico HTTP/1.1" 404 207 "http://20.214.153.96/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+Oct 15 16:31:49 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:31:49 +0700] "GET /health HTTP/1.1" 200 91 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+Oct 15 16:31:54 cc-m03-25832074001 gunicorn[4258]: 127.0.0.1 - - [15/Oct/2026:16:31:54 +0700] "GET /health HTTP/1.1" 200 91 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
