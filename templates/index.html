@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aplikasi PKL SMK - Cloud Computing PTI 2802 First Deployment">
+  <title>Aplikasi PKL SMK — M03</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <span class="badge">PTI 2802 · M03</span>
+    <h1>Aplikasi PKL SMK</h1>
+    <p class="lead">Pemantauan penempatan praktik kerja lapangan secara terpusat.</p>
+
+    <dl>
+      <div><dt>Environment</dt><dd>{{ app_env }}</dd></div>
+      <div><dt>Host</dt><dd>{{ hostname }}</dd></div>
+    </dl>
+
+    <h2>Daftar Penempatan (data contoh)</h2>
+    <table>
+      <thead>
+        <tr><th>Siswa</th><th>Tempat PKL</th><th>Periode</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        {% for p in penempatan %}
+        <tr>
+          <td>{{ p.siswa }}</td>
+          <td>{{ p.tempat }}</td>
+          <td>{{ p.periode }}</td>
+          <td>{{ p.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <nav>
+      <a href="/health">Health Endpoint</a>
+      <a href="/api/info">API Info</a>
+      <a href="/api/penempatan">API Penempatan</a>
+    </nav>
+  </main>
+</body>
+</html>
